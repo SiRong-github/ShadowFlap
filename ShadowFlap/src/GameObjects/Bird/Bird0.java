@@ -1,6 +1,8 @@
+/**
+ * Bird0 Class
+ * Bird for Level0
+ */
 package GameObjects.Bird;
-
-import bagel.Input;
 
 public class Bird0 extends Bird {
 

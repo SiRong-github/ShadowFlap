@@ -1,3 +1,6 @@
+/**
+ * GameObjectTypes Enum
+ */
 package GameObjects;
 
 public enum GameObjectTypes {

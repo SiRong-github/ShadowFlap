@@ -1,3 +1,6 @@
+/**
+ * PlasticPipeSet Class
+ */
 package GameObjects.PipeSet.PipeType;
 
 public class PlasticPipeSet extends PipeSet {
@@ -7,7 +10,5 @@ public class PlasticPipeSet extends PipeSet {
     public PlasticPipeSet(double gapPos) {
         super(PipeSetType.PLASTIC, PATH, gapPos);
     }
-
-
 
 }

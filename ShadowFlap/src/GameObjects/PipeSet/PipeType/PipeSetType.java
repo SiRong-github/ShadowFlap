@@ -1,3 +1,6 @@
+/**
+ * PipeSetType Enum
+ */
 package GameObjects.PipeSet.PipeType;
 
 public enum PipeSetType {

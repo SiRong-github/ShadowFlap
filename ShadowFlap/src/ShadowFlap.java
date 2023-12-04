@@ -4,11 +4,6 @@ import bagel.*;
 
 import java.util.ArrayList;
 
-/**
- * Skeleton Code for SWEN20003 Project 2, Semester 2, 2021
- * Please filling your name below
- * @author:
- */
 public class ShadowFlap extends AbstractGame {
     private final int maxLevel;
     private final ArrayList<Level> levels;
@@ -41,11 +36,12 @@ public class ShadowFlap extends AbstractGame {
     }
 
     /**
-     * Performs a state update.
-     * allows the game to exit when the escape key is pressed.
+     * Performs a state update and allows the game to exit when the escape key is pressed.
+     * @param input Input
      */
     @Override
     public void update(Input input) {
+        /* Runs each level of the game */
         if (currLevel.hasCompleted() && currLevelIndex != maxLevel) {
             currLevelIndex++;
             currLevel = levels.get(currLevelIndex);

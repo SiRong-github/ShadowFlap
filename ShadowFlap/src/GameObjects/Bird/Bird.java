@@ -1,3 +1,6 @@
+/**
+ * Bird Abstract Class
+ */
 package GameObjects.Bird;
 
 import Window.Window;
@@ -31,6 +34,10 @@ public abstract class Bird implements GameObject {
         yVelocity = INIT_SPEED;
     }
 
+    /**
+     * Updates the bird (player) state
+     * @param input
+     */
     public void update(Input input) {
         if (input.wasPressed(Keys.SPACE)) {
             yVelocity = -FLY;
@@ -48,6 +55,9 @@ public abstract class Bird implements GameObject {
 
     }
 
+    /**
+     * Resets the position of the bird
+     */
     public void reset() {
         y = INIT_POS.y;
     }

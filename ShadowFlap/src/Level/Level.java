@@ -1,3 +1,6 @@
+/**
+ * Level Abstract Class
+ */
 package Level;
 
 import GameObjects.Bird.Bird;
@@ -59,7 +62,9 @@ public abstract class Level {
      * @param input player input
      */
     public void update(Input input) {
+        /* Draws the background of the level */
         bg.draw(Window.MID_X.getValue(), Window.MID_Y.getValue());
+        /* Checks whether the level has started */
         if (!hasStarted) {
             if (input.wasPressed(Keys.SPACE)) {
                 hasStarted = true;
@@ -67,6 +72,7 @@ public abstract class Level {
                 renderStartScreen();
             }
         } else {
+            /* Checks level completion */
             if (hasWon) {
                 renderWinScreen();
             } else if (hasLost) {
@@ -81,10 +87,15 @@ public abstract class Level {
         }
     }
 
+    /**
+     * Updates the player life
+     */
     protected void updateLife() {
+
+        /* Update based on whether player has collided with pipe set */
         for (HashMap.Entry<PipeSet, String> entry : pipeSets.entrySet()) {
             if (entry.getValue().equals("new")) {
-                if (CollisionDetector.hasHit(bird.getBoundingBox(), entry.getKey().getBoundingBoxes())) {
+                if (CollisionDetector.hasCollided(bird.getBoundingBox(), entry.getKey().getBoundingBoxes())) {
                     entry.setValue("hit");
                     life--;
                     break;
@@ -92,11 +103,13 @@ public abstract class Level {
             }
         }
 
+        /* Update based on whether player is out of bounds */
         if (bird.outOfBounds()) {
             life--;
             bird.reset();
         }
 
+        /* Update based on whether player has lost */
         if (life == 0) {
             hasLost = true;
         }
@@ -104,8 +117,12 @@ public abstract class Level {
         LifeFactory.renderLife(life, maxLife);
     }
 
+    /**
+     * Updates player score
+     */
     protected void updateScore() {
 
+        /* Update based on whether player has passed a pipe set */
         itrNP = newPipeSets.iterator();
         while (itrNP.hasNext()) {
             PipeSet p = itrNP.next();
@@ -117,6 +134,7 @@ public abstract class Level {
             }
         }
 
+        /* Update based on whether player has won */
         if (score == maxScore) {
             hasWon = true;
         }
@@ -124,10 +142,17 @@ public abstract class Level {
         Message.printScore(score);
     }
 
+    /**
+     * Indicates whether player has completed the level
+     * @return true if player has completed the level, false otherwise
+     */
     public boolean hasCompleted() {
         return hasCompleted;
     }
 
+    /**
+     * Creates game objects (specifically the pipe sets)
+     */
     protected void createGameObjects() {
         if (frame % PipeSet.SPAWN_FRAME == 0) {
             PipeSet pipe = PipeSetFactory.getInstance().getPipe(level);
@@ -136,12 +161,20 @@ public abstract class Level {
         }
     }
 
+    /**
+     * Updates the game objects
+     * @param input Player input
+     */
     protected void updateGameObjects(Input input) {
-        speed = Timescale.getSpeed(input);
+        /* Gets the speed of the game objects (pipe sets) based on player timescale control */
+        speed = Timescale.getInstance().getSpeed(input);
+        /* Updates bird */
         bird.update(input);
         itrP = pipeSets.entrySet().iterator();
+        /* Updates each pipe set */
         while (itrP.hasNext()) {
             HashMap.Entry<PipeSet, String> entry = itrP.next();
+            /* Removes pipe set if the player has collided with it, update otherwise */
             if (entry.getValue().equals("hit")) {
                 newPipeSets.remove(entry.getKey());
                 itrP.remove();
@@ -151,10 +184,16 @@ public abstract class Level {
         }
     }
 
+    /**
+     * Renders start screen
+     */
     protected void renderStartScreen() {
         Message.printMsgCentre(Message.START);
     }
 
+    /**
+     * Renders win screen
+     */
     protected void renderWinScreen() {
         Message.printMsgCentre(Message.LEVEL_UP);
         if (winFrame == WIN_FRAME) {
@@ -163,13 +202,12 @@ public abstract class Level {
         winFrame++;
     }
 
+    /**
+     * Renders game over screen
+     */
     protected void renderGameOverScreen() {
         Message.printMsgCentre(Message.GAME_OVER);
         Message.printFinalScore(score);
-    }
-
-    public int getScore() {
-        return score;
     }
 
 }

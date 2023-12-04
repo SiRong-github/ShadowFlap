@@ -1,3 +1,6 @@
+/**
+ * Message Enum
+ */
 package Message;
 
 import bagel.Font;
@@ -62,10 +65,18 @@ public enum Message {
                 CENTRE.y/2 + FINAL_SCORE_SPACE);
     }
 
+    /**
+     * Converts the message into string
+     * @return String type of the message
+     */
     public String toString() {
         return message;
     }
 
+    /**
+     * Gets the line spacing for the shoot message
+     * @return double Line spacing
+     */
     public static double getShootSpace() {
         return SHOOT_SPACE;
     }

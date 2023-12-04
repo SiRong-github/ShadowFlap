@@ -1,3 +1,6 @@
+/**
+ * FlameSet Class
+ */
 package GameObjects.PipeSet.FlameSet;
 
 import GameObjects.GameObject;
@@ -66,12 +69,20 @@ public class FlameSet implements GameObject {
         return false;
     }
 
+    /**
+     * Gets the top and bottom bounding boxes of the flame set
+     * @return Array of the bounding boxes
+     */
     public Rectangle[] getBoundingBoxes() {
         boundingBoxes = new Rectangle[] {flame.getBoundingBoxAt(new Point(x, YTop)),
                 flame.getBoundingBoxAt(new Point(x, YBot))};
         return boundingBoxes;
     }
 
+    /**
+     * Indicates whether the flame set is rendered
+     * @return true if rendered, false otherwise
+     */
     public boolean isRendered() {
         return isRendered;
     }

@@ -26,7 +26,7 @@ public class WeaponFactory {
     public Weapon getWeapon(Rectangle[] p) {
         WeaponType weapon = WeaponType.TYPES[Randomiser.getRandomInt(1, WeaponType.NUM)-1];
         Point initPos = new Point (Window.RIGHT.getValue(),
-                Randomiser.getRandomDouble(Gap.HIGH_GAP.getValue(), Gap.LOW_GAP.getValue()));
+                Randomiser.getRandomDouble(Gap.HIGH_GAP.getPosition(), Gap.LOW_GAP.getPosition()));
         return switch (weapon) {
             case BOMB -> updatePos(new Bomb(initPos), p);
             case ROCK -> updatePos(new Rock(initPos), p);
@@ -36,7 +36,7 @@ public class WeaponFactory {
     public Weapon updatePos(Weapon w, Rectangle[] p) {
         if (p != null) {
             while (CollisionDetector.weaponHitPipe(w.getBoundingBox(), p)) {
-                w.y = Randomiser.getRandomDouble(Gap.HIGH_GAP.getValue(), Gap.LOW_GAP.getValue());
+                w.y = Randomiser.getRandomDouble(Gap.HIGH_GAP.getPosition(), Gap.LOW_GAP.getPosition());
             }
         }
         return w;

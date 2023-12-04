@@ -1,3 +1,6 @@
+/**
+ * LifeFactory Class
+ */
 package Level;
 
 import bagel.Image;
@@ -13,6 +16,11 @@ public class LifeFactory {
 
     }
 
+    /**
+     * Renders the number of hearts in a given level
+     * @param currLife Current life of the player
+     * @param maxLife Maximum life of the level
+     */
     public static void renderLife(int currLife, int maxLife) {
 
         for (int i = 0; i < currLife; i++) {

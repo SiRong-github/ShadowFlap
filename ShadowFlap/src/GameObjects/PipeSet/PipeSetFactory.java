@@ -1,3 +1,6 @@
+/**
+ * PipeSetFactory Class
+ */
 package GameObjects.PipeSet;
 
 import GameObjects.PipeSet.PipeType.*;
@@ -19,16 +22,14 @@ public class PipeSetFactory {
     }
 
     /**
-     * Gets the pipe type based on level
+     * Creates the pipe type based on level
      * @param level level number
      * @return pipe
      * @throws IllegalArgumentException level number is not found
      */
     public PipeSet getPipe(int level) throws IllegalArgumentException {
-
         PipeSetType pipeSetType = PipeSetLevel.getPipeType(level);
         double pipeGap = PipeSetLevel.getPipeGap(level);
-
         return switch (pipeSetType) {
             case PLASTIC -> new PlasticPipeSet(pipeGap);
             case STEEL -> new SteelPipeSet(pipeGap);

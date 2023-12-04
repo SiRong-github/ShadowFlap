@@ -1,3 +1,7 @@
+/**
+ * BirdFactory Class
+ * Creates the Bird for each level
+ */
 package GameObjects.Bird;
 
 public class BirdFactory {
@@ -17,7 +21,7 @@ public class BirdFactory {
     }
 
     /**
-     * Gets the bird type based on level
+     * Creates the bird type based on level
      * @param level level number
      * @return bird type
      * @throws IllegalArgumentException provided level number is out of the scope

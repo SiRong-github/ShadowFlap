@@ -1,3 +1,6 @@
+/**
+ * GameObject Interface
+ */
 package GameObjects;
 
 import bagel.util.Rectangle;
@@ -20,6 +23,10 @@ public interface GameObject {
      */
     Rectangle getBoundingBox();
 
+    /**
+     * Checks whether the game object is out of bounds
+     * @return true if out of bounds, false otherwise
+     */
     boolean outOfBounds();
 
 }

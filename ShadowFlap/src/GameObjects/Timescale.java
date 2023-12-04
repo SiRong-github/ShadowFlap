@@ -1,3 +1,7 @@
+/**
+ * Timescale Class
+ * Allows the player to control the speed of all game objects except for bird
+ */
 package GameObjects;
 
 import bagel.Input;
@@ -15,11 +19,20 @@ public class Timescale {
         timescale = minTimescale;
     }
 
+    /**
+     * Gets the instance of the Timescale class
+     * @return instance
+     */
     public static Timescale getInstance() {
         return _instance;
     }
 
-    public static double getSpeed(Input k) {
+    /**
+     * Gets the speed based on player input
+     * @param k Player input
+     * @return speed
+     */
+    public double getSpeed(Input k) {
         if (k.wasPressed(Keys.L) && timescale > minTimescale) {
             timescale--;
         }
@@ -31,6 +44,10 @@ public class Timescale {
         return defaultSpeed + (timescale - 1) * speedChange;
     }
 
+    /**
+     * Gets the default speed
+     * @return double Default speed
+     */
     public static double getDefaultSpeed() {
         return defaultSpeed;
     }

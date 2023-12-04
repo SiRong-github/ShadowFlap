@@ -1,3 +1,6 @@
+/**
+ * WeaponType Enum
+ */
 package GameObjects.Weapon;
 
 public enum WeaponType {

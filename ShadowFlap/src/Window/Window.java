@@ -1,5 +1,8 @@
+/**
+ * Window Enum
+ * Positions in the screen
+ */
 package Window;
-
 public enum Window {
 
     TOP(0),
@@ -21,14 +24,6 @@ public enum Window {
      */
     public double getValue() {
         return value;
-    }
-
-    public static double[] getXs() {
-        return new double[] {LEFT.getValue(), RIGHT.getValue()};
-    }
-
-    public static double[] getYs() {
-        return new double[] {TOP.getValue(), BOTTOM.getValue()};
     }
 
 }

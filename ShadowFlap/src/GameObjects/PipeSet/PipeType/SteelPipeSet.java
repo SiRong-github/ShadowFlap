@@ -1,3 +1,6 @@
+/**
+ * SteelPipeSet Class
+ */
 package GameObjects.PipeSet.PipeType;
 
 import GameObjects.PipeSet.FlameSet.FlameSet;
@@ -20,6 +23,10 @@ public class SteelPipeSet extends PipeSet {
         flameSet.update(speed);
     }
 
+    /**
+     * Gets the bounding boxes of the pipe set (may include those of the flame set, if rendered)
+     * @return Array of bounding boxes
+     */
     public Rectangle[] getBoundingBoxes() {
         if (flameSet.isRendered()) {
             return new Rectangle[] {getNoFlames()[0], getNoFlames()[1],
@@ -29,6 +36,10 @@ public class SteelPipeSet extends PipeSet {
         }
     }
 
+    /**
+     * Gets the bounding boxes without the flame set
+     * @return Array of bounding boxes
+     */
     public Rectangle[] getNoFlames() {
         return new Rectangle[] {super.getBoundingBoxes()[0], super.getBoundingBoxes()[1]};
     }

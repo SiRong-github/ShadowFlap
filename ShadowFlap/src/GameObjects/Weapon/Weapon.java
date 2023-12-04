@@ -1,3 +1,6 @@
+/**
+ * Weapon Abstract Class
+ */
 package GameObjects.Weapon;
 
 import Window.Window;
@@ -9,7 +12,7 @@ import bagel.util.Rectangle;
 
 public abstract class Weapon implements GameObject {
     public static final int SPAWN_FRAME = 125;
-    private static final double SHOOTING_SPEED = 5;
+    protected static final double SHOOTING_SPEED = 5;
     protected Image image;
     protected double shootingRange;
     protected PipeSetType[] target;
@@ -35,12 +38,19 @@ public abstract class Weapon implements GameObject {
         render();
     }
 
+    /**
+     * Updates the position of the weapon based on shooting speed
+     */
     public void updateShot() {
         x += SHOOTING_SPEED;
         render();
         shootingFrame++;
     }
 
+    /**
+     * Updates the position based on the bird (player) position
+     * @param bird Position of the bird
+     */
     public void update(Point bird) {
         this.x = bird.x;
         this.y = bird.y;
@@ -67,11 +77,19 @@ public abstract class Weapon implements GameObject {
 
     }
 
+    /**
+     * Instantiates the shooting position and marks the weapon as shot
+     * @param x Position the bird (player) has shot the weapon
+     */
     public void isShot(double x) {
         this.shootingX = x;
         isShot = true;
     }
 
+    /**
+     * Gets the target type of the weapon
+     * @return Array of pipe set type/s
+     */
     public PipeSetType[] getTarget() {
         return target;
     }

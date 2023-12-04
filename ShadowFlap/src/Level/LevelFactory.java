@@ -1,3 +1,7 @@
+/**
+ * LevelFactory Class
+ * Creates each level of the game
+ */
 package Level;
 
 public class LevelFactory {
@@ -5,7 +9,7 @@ public class LevelFactory {
     private static final LevelFactory _instance = new LevelFactory();
     public static final int MAX_LEVEL = 1;
 
-    private LevelFactory() {
+    LevelFactory() {
 
     }
 

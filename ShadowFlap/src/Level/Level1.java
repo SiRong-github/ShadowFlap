@@ -1,3 +1,6 @@
+/**
+ * Level1 Class
+ */
 package Level;
 
 import GameObjects.Bird.Bird1;
@@ -33,8 +36,10 @@ public class Level1 extends Level {
     @Override
     protected void createGameObjects() {
         super.createGameObjects();
+        /* Creates weapons */
         if (frame % Weapon.SPAWN_FRAME == 0) {
             Weapon w;
+            /* Checks whether position has to be given further consideration based on spawned pipe sets, if any */
             if (newPipeSets.size() != 0) {
                 PipeSet p = newPipeSets.get(newPipeSets.size()-1);
                 Rectangle[] justPipes = new Rectangle[]{p.getBoundingBoxes()[0], p.getBoundingBoxes()[1]};
@@ -49,6 +54,7 @@ public class Level1 extends Level {
     @Override
     protected void updateGameObjects(Input input) {
         super.updateGameObjects(input);
+        /* Updates weapons */
         itrW = weapons.entrySet().iterator();
         while (itrW.hasNext()) {
             HashMap.Entry<Weapon, String> entry = itrW.next();
@@ -59,7 +65,7 @@ public class Level1 extends Level {
                     shotWeapons.remove(w);
                 }
                 itrW.remove();
-            } else if (!hasWeapon && v.equals("new") && CollisionDetector.hasHit(bird1.getBoundingBox(), w.getBoundingBox())) {
+            } else if (!hasWeapon && v.equals("new") && CollisionDetector.hasCollided(bird1.getBoundingBox(), w.getBoundingBox())) {
                 weapons.replace(w, "carried");
                 hasWeapon = true;
             } else if (hasWeapon && bird1.hasShot() && v.equals("carried")) {
@@ -80,6 +86,7 @@ public class Level1 extends Level {
 
     @Override
     protected void updateScore() {
+        /* Updates score based on the number of weapons hitting their targeted pipe sets */
         itrSW = shotWeapons.iterator();
         itrP = pipeSets.entrySet().iterator();
         while (itrSW.hasNext()) {

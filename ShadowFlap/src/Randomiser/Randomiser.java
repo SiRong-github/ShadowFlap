@@ -1,5 +1,7 @@
+/**
+ * Randomiser Class
+ */
 package Randomiser;
-
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Randomiser {

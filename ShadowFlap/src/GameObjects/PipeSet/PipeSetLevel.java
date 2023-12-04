@@ -12,8 +12,8 @@ public class PipeSetLevel {
 
     public static double getPipeGap(int level) throws IllegalArgumentException {
         return switch (level) {
-          case 0 -> TYPES[Randomiser.getRandomInt(1, Gap.NUM)-1].getValue();
-          case 1 -> Randomiser.getRandomDouble(HIGH_GAP.getValue(), LOW_GAP.getValue());
+          case 0 -> TYPES[Randomiser.getRandomInt(1, Gap.NUM)-1].getPosition();
+          case 1 -> Randomiser.getRandomDouble(HIGH_GAP.getPosition(), LOW_GAP.getPosition());
           default -> throw new IllegalArgumentException();
         };
     }

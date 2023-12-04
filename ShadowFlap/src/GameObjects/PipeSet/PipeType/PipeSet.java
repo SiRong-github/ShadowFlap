@@ -1,3 +1,6 @@
+/**
+ * PipeSet Abstract Class
+ */
 package GameObjects.PipeSet.PipeType;
 
 import Window.Window;
@@ -45,6 +48,10 @@ public abstract class PipeSet implements GameObject {
         return image.getBoundingBoxAt(new Point(x, YTop));
     }
 
+    /**
+     * Gets the top and bottom bounding boxes of the pipe set
+     * @return Array of bounding boxes
+     */
     public Rectangle[] getBoundingBoxes() {
         return new Rectangle[] {getBoundingBox(), image.getBoundingBoxAt(new Point(x, YBot))};
     }
@@ -54,10 +61,10 @@ public abstract class PipeSet implements GameObject {
         return x <= Window.LEFT.getValue();
     }
 
-    public int getSpawnFrame() {
-        return SPAWN_FRAME;
-    }
-
+    /**
+     * Gets the type of the pipe set
+     * @return pipe set type
+     */
     public PipeSetType getType() {
         return type;
     }

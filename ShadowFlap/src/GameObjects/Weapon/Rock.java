@@ -1,3 +1,6 @@
+/**
+ * Rock Class
+ */
 package GameObjects.Weapon;
 
 import GameObjects.PipeSet.PipeType.PipeSetType;

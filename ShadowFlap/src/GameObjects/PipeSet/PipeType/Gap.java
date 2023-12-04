@@ -1,3 +1,7 @@
+/**
+ * Gap Enum
+ * Indicates where the gap of the pipe set is located
+ */
 package GameObjects.PipeSet.PipeType;
 
 public enum Gap {
@@ -8,13 +12,17 @@ public enum Gap {
 
     public static final int NUM = 3;
     public static final Gap[] TYPES = Gap.values();
-    private final double value;
+    private final double position;
 
-    Gap(double value) {
-        this.value = value;
+    Gap(double position) {
+        this.position = position;
     }
 
-    public double getValue() {
-        return value;
+    /**
+     * Gets the position of the gap
+     * @return position of the gap
+     */
+    public double getPosition() {
+        return position;
     }
 }

@@ -1,3 +1,7 @@
+/**
+ * Bird1 Class
+ * Bird for Level1
+ */
 package GameObjects.Bird;
 
 import bagel.Input;
@@ -21,10 +25,18 @@ public class Bird1 extends Bird {
         hasShot = input.wasPressed(Keys.S);
     }
 
+    /**
+     * Indicates whether the player has pressed the S key
+     * @return true if player has pressed the S key, false otherwise
+     */
     public boolean hasShot() {
         return hasShot;
     }
 
+    /**
+     * Gets the position of the beak
+     * @return Point beak position
+     */
     public Point getBeakPos() {
         return new Point(getBoundingBox().right(), y);
     }
