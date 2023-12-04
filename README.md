@@ -1,6 +1,8 @@
 # ShadowFlap
 
-This project is an imitation of Flappy Bird using the Bagel package as discussed below.
+This project is done for SWEN20003 Object Oriented Software Development. 
+It is an imitation of Flappy Bird using the Bagel package: 
+https://people.eng.unimelb.edu.au/mcmurtrye/bagel-doc/bagel/package-frame.html
 
 It has two levels:  
 
@@ -8,9 +10,6 @@ Level 0 consists of the usual Flappy Bird gameplay, wherein the player has to av
 
 Level 1 consists of an additional steel pipe type which shoots flames and of a set of weapons the player can utilise. 
 Rocks can only hit plastic pipes while bombs can hit any pipe type. Both weapons have limited shooting ranges. 
-
-External Libraries Used (Bagel): 
-https://people.eng.unimelb.edu.au/mcmurtrye/bagel-doc/bagel/package-frame.html
 
 
 https://github.com/SiRong-github/ShadowFlap/assets/62817554/2ed3a527-8f95-46f5-9cf8-349936afe4c4
