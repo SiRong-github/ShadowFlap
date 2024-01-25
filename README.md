@@ -1,6 +1,6 @@
 # ShadowFlap
 
-This project is done for SWEN20003 Object Oriented Software Development. 
+This project is done for SWEN20003 Object Oriented Software Development of the University of Melbourne. 
 It is an imitation of Flappy Bird using the Bagel package: 
 https://people.eng.unimelb.edu.au/mcmurtrye/bagel-doc/bagel/package-frame.html
 
