@@ -32,13 +32,18 @@ https://github.com/SiRong-github/ShadowFlap/assets/62817554/c0bad8b8-fae2-470f-b
 # Provided Template
 
 1. bagel.iml
-    Contains the provided Bagel package.
-2. pom.xml
 
-3. res folder
+    Contains the provided Bagel package.
+3. pom.xml
+
+    Contains the maven compiler plugin to be able to use the Bagel package.
+
+5. res folder
+
     Contains the images of the game objects and the font style.
    
-4. src folder
+7. src folder
+
     Contains the ShadowFlap.java which is the main program to be edited.
 
 # Commands
