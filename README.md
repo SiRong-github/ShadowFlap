@@ -1,6 +1,16 @@
 # University Subject
 This project is done for SWEN20003 Object of Oriented Software Development of the University of Melbourne.
 
+# Demo
+
+https://github.com/SiRong-github/ShadowFlap/assets/62817554/2ed3a527-8f95-46f5-9cf8-349936afe4c4
+
+
+https://github.com/SiRong-github/ShadowFlap/assets/62817554/2bd8b0ef-e67e-448b-9951-a983652435b9
+
+
+https://github.com/SiRong-github/ShadowFlap/assets/62817554/c0bad8b8-fae2-470f-b0b7-1aff065f4c1a
+
 # File Purpose
 The program implements the Flappy Bird game using the Bagel package: 
 
@@ -18,16 +28,6 @@ The game consists of 2 levels:
     Consists of an additional steel pipe type which shoots flames and of a set of weapons the player can utilise. 
 
     Rocks can only hit plastic pipes while bombs can hit any pipe type. Both weapons have limited shooting ranges. 
-
-# Demo
-
-https://github.com/SiRong-github/ShadowFlap/assets/62817554/2ed3a527-8f95-46f5-9cf8-349936afe4c4
-
-
-https://github.com/SiRong-github/ShadowFlap/assets/62817554/2bd8b0ef-e67e-448b-9951-a983652435b9
-
-
-https://github.com/SiRong-github/ShadowFlap/assets/62817554/c0bad8b8-fae2-470f-b0b7-1aff065f4c1a
 
 # Provided Template
 
