@@ -8,7 +8,7 @@ import GameObjects.PipeSet.PipeType.PipeSet;
 
 public class FlameSetFactory {
     private static final FlameSetFactory _instance = new FlameSetFactory();
-    private static final String PATH = "ShadowFlap/res/level-1/flame.png";
+    private static final String PATH = "res/level-1/flame.png";
     private static final int FLAME_DIST = 10;
 
     FlameSetFactory() {

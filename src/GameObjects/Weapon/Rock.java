@@ -8,7 +8,7 @@ import bagel.util.Point;
 
 public class Rock extends Weapon {
 
-    private static final String PATH = "ShadowFlap/res/Level-1/rock.png";
+    private static final String PATH = "res/Level-1/rock.png";
     private static final int SHOOTING_RANGE = 25;
 
     public Rock(Point initPos) {

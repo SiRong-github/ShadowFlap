@@ -11,19 +11,19 @@ import static GameObjects.PipeSet.PipeType.PipeSetType.NUM;
 public class PipeSetLevel {
 
     public static double getPipeGap(int level) throws IllegalArgumentException {
-        return switch (level) {
-          case 0 -> TYPES[Randomiser.getRandomInt(1, Gap.NUM)-1].getPosition();
-          case 1 -> Randomiser.getRandomDouble(HIGH_GAP.getPosition(), LOW_GAP.getPosition());
-          default -> throw new IllegalArgumentException();
-        };
+        if (level == 0) {
+            return TYPES[Randomiser.getRandomInt(1, Gap.NUM)-1].getPosition();
+        } else {
+            return Randomiser.getRandomDouble(HIGH_GAP.getPosition(), LOW_GAP.getPosition());
+        }
     }
 
     public static PipeSetType getPipeType(int level) throws IllegalArgumentException {
-        return switch (level) {
-            case 0 -> PipeSetType.PLASTIC;
-            case 1 -> PipeSetType.TYPES[Randomiser.getRandomInt(1, NUM)-1];
-            default -> throw new IllegalArgumentException();
-        };
+        if (level == 0) {
+            return PipeSetType.PLASTIC;
+        } else {
+            return PipeSetType.TYPES[Randomiser.getRandomInt(1, NUM)-1];
+        }
     }
 
 }

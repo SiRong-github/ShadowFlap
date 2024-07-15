@@ -28,11 +28,11 @@ public class LevelFactory {
      * @throws IllegalArgumentException outside number of levels
      */
     public Level getLevel(int level) throws IllegalArgumentException {
-        return switch (level) {
-            case 0 -> new Level0();
-            case 1 -> new Level1();
-            default -> throw new IllegalArgumentException();
-        };
+        if (level == 0) {
+            return new Level0();
+        } else {
+            return new Level1();
+        }
     }
 
 }

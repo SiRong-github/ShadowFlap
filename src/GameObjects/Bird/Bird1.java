@@ -10,8 +10,8 @@ import bagel.util.Point;
 
 public class Bird1 extends Bird {
 
-    private static final String PATH_UP = "ShadowFlap/res/level-1/birdWingUp.png";
-    private static final String PATH_DOWN = "ShadowFlap/res/level-1/birdWingDown.png";
+    private static final String PATH_UP = "res/level-1/birdWingUp.png";
+    private static final String PATH_DOWN = "res/level-1/birdWingDown.png";
     private boolean hasShot;
 
     public Bird1() {

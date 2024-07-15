@@ -18,7 +18,7 @@ public enum Message {
     CONGRATS("CONGRATULATIONS");
 
     private static final Point SCORE_POS = new Point(100,100);
-    private static final Font FONT = new Font("ShadowFlap/res/font/slkscr.ttf", 48);
+    private static final Font FONT = new Font("res/font/slkscr.ttf", 48);
     private static final Point CENTRE = new Point(Window.getWidth(), Window.getHeight());
     private static final double SHOOT_SPACE = 68;
     private static final double FINAL_SCORE_SPACE = 75;

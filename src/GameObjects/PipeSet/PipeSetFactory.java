@@ -28,13 +28,13 @@ public class PipeSetFactory {
      * @throws IllegalArgumentException level number is not found
      */
     public PipeSet getPipe(int level) throws IllegalArgumentException {
-        PipeSetType pipeSetType = PipeSetLevel.getPipeType(level);
+        String pipeSetType = PipeSetLevel.getPipeType(level).toString();
         double pipeGap = PipeSetLevel.getPipeGap(level);
-        return switch (pipeSetType) {
-            case PLASTIC -> new PlasticPipeSet(pipeGap);
-            case STEEL -> new SteelPipeSet(pipeGap);
-        };
-
+        if (pipeSetType.equals("PLASTIC")) {
+            return new PlasticPipeSet(pipeGap);
+        } else {
+            return new SteelPipeSet(pipeGap);
+        }
     }
 
 }

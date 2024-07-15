@@ -15,7 +15,7 @@ import java.util.*;
 
 public class Level1 extends Level {
 
-    protected static final String BG_PATH = "ShadowFlap/res/level-1/background.png";
+    protected static final String BG_PATH = "res/level-1/background.png";
     protected static final int MAX_LIFE = 5;
     protected static final int MAX_SCORE = 30;
     protected HashMap<Weapon, String> weapons;

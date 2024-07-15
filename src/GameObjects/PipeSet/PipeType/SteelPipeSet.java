@@ -9,7 +9,7 @@ import bagel.util.Rectangle;
 
 public class SteelPipeSet extends PipeSet {
 
-    private static final String PATH = "ShadowFlap/res/level-1/steelPipe.png";
+    private static final String PATH = "res/level-1/steelPipe.png";
     private final FlameSet flameSet;
 
     public SteelPipeSet(double gapPos) {

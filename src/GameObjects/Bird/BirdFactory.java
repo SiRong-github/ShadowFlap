@@ -27,11 +27,11 @@ public class BirdFactory {
      * @throws IllegalArgumentException provided level number is out of the scope
      */
     public Bird getBird(int level) throws IllegalArgumentException {
-        return switch (level) {
-            case 0 -> new Bird0();
-            case 1 -> new Bird1();
-            default -> throw new IllegalArgumentException();
-        };
+        if (level == 0) {
+            return new Bird0();
+        } else {
+            return new Bird1();
+        }
     }
 
 }

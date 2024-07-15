@@ -5,7 +5,7 @@ package Level;
 
 public class Level0 extends Level {
 
-    protected static final String BG_PATH = "ShadowFlap/res/level-0/background.png";
+    protected static final String BG_PATH = "res/level-0/background.png";
     protected static final int MAX_LIFE = 3;
     protected static final int MAX_SCORE = 10;
 

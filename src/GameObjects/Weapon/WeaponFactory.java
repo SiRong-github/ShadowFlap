@@ -24,13 +24,14 @@ public class WeaponFactory {
     }
 
     public Weapon getWeapon(Rectangle[] p) {
-        WeaponType weapon = WeaponType.TYPES[Randomiser.getRandomInt(1, WeaponType.NUM)-1];
+        String weapon = WeaponType.TYPES[Randomiser.getRandomInt(1, WeaponType.NUM)-1].toString();
         Point initPos = new Point (Window.RIGHT.getValue(),
                 Randomiser.getRandomDouble(Gap.HIGH_GAP.getPosition(), Gap.LOW_GAP.getPosition()));
-        return switch (weapon) {
-            case BOMB -> updatePos(new Bomb(initPos), p);
-            case ROCK -> updatePos(new Rock(initPos), p);
-        };
+        if (weapon.equals("BOMB")) {
+            return updatePos(new Bomb(initPos), p);
+        } else {
+            return updatePos(new Rock(initPos), p);
+        }
     }
 
     public Weapon updatePos(Weapon w, Rectangle[] p) {
